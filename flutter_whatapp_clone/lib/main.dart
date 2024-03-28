@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MainApp());
+  runApp(const MainApp());
 }
 
 class MainApp extends StatelessWidget {
+  const MainApp({super.key});
+
   
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       home: Scaffold(
         appBar: PreferredSize(
-          preferredSize: Size.fromHeight(50),
+          preferredSize: const Size.fromHeight(50),
           child: AppBar(
             backgroundColor: Colors.teal[900],
-            title: Row(
+            title: const Row(
               children: [
                 Text(
                   'WhatsApp',
@@ -45,7 +47,7 @@ class MainApp extends StatelessWidget {
           ),
           
            body:ListView(
-          children: [
+          children: const [
             SizedBox(height: 20),
                      Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -263,11 +265,18 @@ class MainApp extends StatelessWidget {
                   ],)
             ])
                 ],
-            )
+            ),
             
-
+        floatingActionButton: FloatingActionButton(
+          onPressed: (){},
+          backgroundColor: Colors.teal[900],
+          child: Icon(
+            Icons.add_box,
+            color: Colors.white,)
+            ),
             
         ),
+        
     );
   }
 }

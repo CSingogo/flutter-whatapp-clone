@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_whatapp_clone/pages/message.dart';
 import '../people.dart';
 /**
  * This is the file that handles contact information rendered
@@ -36,7 +37,12 @@ class _ContactsState extends State<Contacts> {
         itemBuilder: (context, index){
           return Card(
             child: ListTile(
-              onTap: (){},
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Message(item:people[index])));
+              },
               title: Text(people[index].name),
               subtitle: Text(people[index].status),
               leading: Icon(Icons.contacts),

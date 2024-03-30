@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+
+/**
+ * This file contains the appBar code 
+ * 
+ */
 class TopBar extends StatelessWidget {
   
   @override

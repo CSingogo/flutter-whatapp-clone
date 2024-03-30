@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+//code for main whatapp home page
+
 class MidWidget extends StatelessWidget {
   const MidWidget({super.key});
 

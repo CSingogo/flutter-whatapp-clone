@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_whatapp_clone/pages/message.dart';
 import '../people.dart';
-/**
- * This is the file that handles contact information rendered
- * from the people list
- */
+/// This is the file that handles contact information rendered
+/// from the people list
 class Contacts extends StatefulWidget {
   const Contacts({super.key});
 
@@ -29,13 +27,47 @@ class _ContactsState extends State<Contacts> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-            title: Text('Select contact'),
+        backgroundColor: Colors.teal[900],
+        iconTheme: IconThemeData(
+            color: Colors.white,
+          ),
+        title:  Row(
+                      children: [
+                        Container(child: Column
+                        
+                        (
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                              Text(
+                                'Select contact',
+                                 style: TextStyle(color: Colors.white,
+                                 fontSize: 20),
+                                ),
+                                Text(
+                                  '${people.length} contacts',
+                                  style: TextStyle(color: Colors.white,
+                                 fontSize: 15),
+                                )
+                        ],)
+                        ,),
+                        Spacer(),
+                        Container(child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: <Widget>[
+                            Icon(Icons.search),
+                            Icon(Icons.more_vert)
+                          ],
+                        )
+                        )
+                      ],
+           )
             
       ),
       body: ListView.builder(
         itemCount: people.length,
         itemBuilder: (context, index){
           return Card(
+            elevation: 0,
             child: ListTile(
               onTap: (){
                 Navigator.push(

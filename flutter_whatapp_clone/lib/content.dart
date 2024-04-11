@@ -4,9 +4,16 @@ import 'middle.dart';
 // this file has the child and body widget,bottom navigation bar and floating action button
 
 
-class Content extends StatelessWidget {
+class Content extends StatefulWidget {
   const Content({super.key});
 
+
+  @override
+  State<Content> createState() => _ContentState();
+}
+
+class _ContentState extends State<Content> {
+  int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +35,7 @@ class Content extends StatelessWidget {
             
             bottomNavigationBar: BottomNavigationBar(
               showUnselectedLabels: true,
-              currentIndex: 0,
+              currentIndex: _selectedIndex,
               elevation: 1.0,
               selectedItemColor: Colors.black,
               unselectedItemColor: const Color.fromARGB(255, 134, 119, 119),
@@ -52,8 +59,12 @@ class Content extends StatelessWidget {
             icon: Icon(Icons.call),
           ),
         ],
-         
-        onTap: (int indexOfItem) {}
+        
+        onTap: (int index) {
+          setState(() {
+          _selectedIndex = index;
+          });
+        }
         ),
         );
   }

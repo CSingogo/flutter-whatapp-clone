@@ -5,7 +5,7 @@ class Message extends StatelessWidget {
   
   final People item;
 
-   Message({required this.item});
+   const Message({required this.item});
 
   @override
   Widget build(BuildContext context) {

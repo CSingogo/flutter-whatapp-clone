@@ -3,7 +3,7 @@ import 'content.dart';
 import 'pages/contacts.dart';
 
 void main() {
-  runApp(MainApp());
+  runApp(const MainApp());
 }
 
 class MainApp extends StatelessWidget {
@@ -14,11 +14,11 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Content(),
+      home: const Content(),
       initialRoute: '/',
       routes: {
         
-        '/contacts':(context) => Contacts(),
+        '/contacts':(context) => const Contacts(),
       },
         
     );

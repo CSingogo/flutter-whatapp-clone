@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
 
 
-/**
- * This file contains the appBar code 
- * 
- */
+/// This file contains the appBar code 
+
 class TopBar extends StatelessWidget {
+  const TopBar({super.key});
+
+
   
   @override
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.teal[900],
-      title:  Row(
+      title:  const Row(
         children: [
           Text(
             'WhatsApp',

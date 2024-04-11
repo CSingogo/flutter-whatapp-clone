@@ -13,14 +13,14 @@ class Contacts extends StatefulWidget {
 class _ContactsState extends State<Contacts> {
   
   List<People> people = [
-   People(name: 'Alice', status: 'yeah' , msg:'qqqqqqqqqqqqqqqqqqqqqqqqqqqqq'),
-   People(name: 'Bob', status: 'no',msg:'bbbbbbbbbbbbbbbbbbbbbbbb'),
-   People(name: 'John Banda', status: 'maybe', msg:'iiiiiiiiiiiiiiiiiiiiiiiii'),
-   People(name: 'Judith', status: 'yes',msg:'uuuuuuuuuuuuuuuuuuuuuuuuuu'),
-    People(name: 'Andrew', status: 'nah',msg:'kkkkkkkkkkkkkkkkkkkkkkkkk'),
-   People(name: 'Samuel', status: 'react',msg:'ggggggggggggggggggggggggg'),
-   People(name: 'Chileshe', status: 'angular', msg:'kkkkkkkkkkkkkkkkkkkkk'),
-   People(name: 'Phiri', status: 'flutter', msg:'ddddddddddddddddddddddddd'),
+   People(name: 'Alice', status: 'yeah' , msg:'qqqqqqqqqqqqqqqqqqqqqqqqqqqqq', image:''),
+   People(name: 'Bob', status: 'no',msg:'bbbbbbbbbbbbbbbbbbbbbbbb', image:''),
+   People(name: 'John Banda', status: 'maybe', msg:'iiiiiiiiiiiiiiiiiiiiiiiii',image:''),
+   People(name: 'Judith', status: 'yes',msg:'uuuuuuuuuuuuuuuuuuuuuuuuuu', image:''),
+    People(name: 'Andrew', status: 'nah',msg:'kkkkkkkkkkkkkkkkkkkkkkkkk', image:''),
+   People(name: 'Samuel', status: 'react',msg:'ggggggggggggggggggggggggg', image:''),
+   People(name: 'Chileshe', status: 'angular', msg:'kkkkkkkkkkkkkkkkkkkkk', image:''),
+   People(name: 'Phiri', status: 'flutter', msg:'ddddddddddddddddddddddddd', image:''),
    ]; // random list of contacts
 
   @override
@@ -28,7 +28,7 @@ class _ContactsState extends State<Contacts> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal[900],
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
             color: Colors.white,
           ),
         title:  Row(
@@ -38,23 +38,24 @@ class _ContactsState extends State<Contacts> {
                         (
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                              Text(
+                              const Text(
                                 'Select contact',
                                  style: TextStyle(color: Colors.white,
                                  fontSize: 20),
                                 ),
                                 Text(
                                   '${people.length} contacts',
-                                  style: TextStyle(color: Colors.white,
+                                  style: const TextStyle(color: Colors.white,
                                  fontSize: 15),
                                 )
                         ],)
                         ,),
-                        Spacer(),
-                        Container(child: Row(
+                        const Spacer(),
+                        Container(child: const Row(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: <Widget>[
                             Icon(Icons.search),
+                            SizedBox(width: 15,),
                             Icon(Icons.more_vert)
                           ],
                         )
@@ -77,7 +78,7 @@ class _ContactsState extends State<Contacts> {
               },
               title: Text(people[index].name),
               subtitle: Text(people[index].status),
-              leading: Icon(Icons.contacts),
+              leading: const Icon(Icons.contacts),
             ),
           );
 

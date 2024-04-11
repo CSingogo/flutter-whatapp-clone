@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'top.dart';
+import 'components/top.dart';
 import 'middle.dart';
 // this file has the child and body widget,bottom navigation bar and floating action button
 
@@ -10,18 +10,18 @@ class Content extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(kToolbarHeight),
+        appBar: const PreferredSize(
+          preferredSize: Size.fromHeight(kToolbarHeight),
           child: TopBar()),
           
-           body: MidWidget(),
+           body: const MidWidget(),
             
         floatingActionButton: FloatingActionButton(
           onPressed: (){
             Navigator.pushNamed(context, '/contacts');
           },
           backgroundColor: Colors.teal[900],
-          child: Icon(
+          child: const Icon(
             Icons.add_box,
             color: Colors.white,)
             ),
@@ -32,8 +32,8 @@ class Content extends StatelessWidget {
               elevation: 1.0,
               selectedItemColor: Colors.black,
               unselectedItemColor: const Color.fromARGB(255, 134, 119, 119),
-              selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
-              unselectedLabelStyle: TextStyle(fontWeight: FontWeight.normal),
+              selectedLabelStyle: const TextStyle(fontWeight: FontWeight.bold),
+              unselectedLabelStyle: const TextStyle(fontWeight: FontWeight.normal),
         items: const [
           BottomNavigationBarItem(
             label: "Chats",
@@ -53,7 +53,8 @@ class Content extends StatelessWidget {
           ),
         ],
          
-        onTap: (int indexOfItem) {}),
+        onTap: (int indexOfItem) {}
+        ),
         );
   }
 }
